@@ -15,6 +15,7 @@
 	 </form>
     </div>
    </div>
+   
    <?php
    // Переменные с формы
    if(isset($_POST['its']))
@@ -23,32 +24,21 @@
    
    // Параметры для подключения
    $db_host = "localhost";
-   $db_user = "id459119_its";
-   $db_password = "3teexQnEW*LhL12#E3OM";
-   $db_name = "id459119_ochered";
+   $db_user = "root";
+   $db_password = "";
+   $db_name = "ochered";
    $db_table = "queryID";
    
    // Подключение к базе данных
-   try {
-		$conn = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_password);
-		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		echo "Connected successfully";
-		} catch(PDOException $e) {
-		echo "Connection failed: ". $e->getMessage();
-		}
-	//	$db = mysql_connect($db_host,$db_user,$db_password) OR DIE("Не могу создать соединение");
+   $db = mysql_connect($db_host,$db_user,$db_password) OR DIE("Не могу создать соединение");
    
    // Выборка базы
-   //mysql_select_db("id459119_ochered",$db);
+   mysql_select_db("ochered",$db);
    
    // Установка кодировки соединения
    //mysql_query("SET NAMES 'utf8'",$db);
    
-   $query = 'INSERT INTO id459119_ochered.queryID (kod) VALUES (123)';
-   $result = $conn->query($query);
-   print_r($result);
-   $conn = NULL;
-
+   $result = mysql_query ("INSERT INTO ochered.".$db_table." (id,kod) VALUES (1,123)");
    ?>
  </body>
 </html>

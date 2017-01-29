@@ -10,8 +10,10 @@
     <div class="centered">
      <h1 align="center">Выберите услугу</h1> 
 	 <form method="POST" action="">
-		<input name="its" type="text" placeholder="Интехстрой"/>
-		<input type=submit value="Отправить"/>
+		<input name="cons" type="button" placeholder="Консультация"/>
+		<input name="oform" type="button" placeholder="Оформить заказ/счет"/>
+		<input name="prod" type="button" placeholder="Получить готовую продукцию"/>
+		<input name="cons" type="button" placeholder="Сэндвич-панели, ЛМК"/> 
 	 </form>
     </div>
    </div>
@@ -38,7 +40,7 @@
    // Установка кодировки соединения
    //mysql_query("SET NAMES 'utf8'",$db);
    
-   $result = mysql_query ("INSERT INTO ochered.".$db_table." (id,kod) VALUES (1,123)");
+   //$result = mysql_query ("INSERT INTO ochered.".$db_table." (id,kod) VALUES (1,123)");
    ?>
  </body>
 </html>

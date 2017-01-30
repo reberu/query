@@ -10,10 +10,10 @@
     <div class="centered">
      <h1 align="center">Выберите услугу</h1> 
 	 <form method="POST" action="">
-		<input name="cons" type="button" placeholder="Консультация"/>
-		<input name="oform" type="button" placeholder="Оформить заказ/счет"/>
-		<input name="prod" type="button" placeholder="Получить готовую продукцию"/>
-		<input name="cons" type="button" placeholder="Сэндвич-панели, ЛМК"/> 
+		<input name="cons" type="button" value="Консультация"/>
+		<input name="oform" type="button" value="Оформить заказ/счет"/>
+		<input name="prod" type="button" value="Получить готовую продукцию"/>
+		<input name="cons" type="button" value="Сэндвич-панели, ЛМК"/> 
 	 </form>
     </div>
    </div>
@@ -40,6 +40,8 @@
    // Установка кодировки соединения
    //mysql_query("SET NAMES 'utf8'",$db);
    
+   $max = mysql_query ("SELECT MAX(id) from queryID");
+	 $result = mysql_query("INSERT INTO ochered.queryID (kod) VALUES ($max+1)");
    //$result = mysql_query ("INSERT INTO ochered.".$db_table." (id,kod) VALUES (1,123)");
    ?>
  </body>
